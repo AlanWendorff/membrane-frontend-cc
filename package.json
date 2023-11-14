@@ -14,10 +14,13 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.17",
     "@mui/system": "^5.14.18",
+    "@walletconnect/ethereum-provider": "^2.10.4",
     "react": "^18.2.0",
     "react-dapp-web3": "^3.0.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "walletconnect": "^1.7.8",
+    "web3": "^4.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
