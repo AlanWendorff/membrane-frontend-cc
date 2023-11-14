@@ -4,8 +4,10 @@ const Header = () => (
   <AppBar position="static">
     <Container maxWidth="xl">
       <Toolbar>
-        <Grid container justifyContent="flex-end">
+        <Grid container justifyContent="flex-end" alignItems="center">
+          <p>Account balance: 0.314 $QUIZ</p>
           <Button
+            sx={{ ml: 3 }}
             variant="contained"
             color="secondary"
             aria-label="Connect to wallet"
