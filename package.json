@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.17",
     "next": "14.0.2",
     "react": "^18",
+    "react-dapp-web3": "^3.0.1",
     "react-dom": "^18"
   },
   "devDependencies": {
