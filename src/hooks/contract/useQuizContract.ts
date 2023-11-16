@@ -3,11 +3,11 @@ import QUIZ_CONTRACT_ABI from "../../contracts/QuizContract.abi";
 import { QUIZ_CONTRACT_ADDRESS } from "../../constants/env";
 import { useEffect, useState } from "react";
 
-interface IUseQuizReturnProps {
+interface IUseQuizContractReturnProps {
   accountBalance: number | null;
 }
 
-const useQuiz = (): IUseQuizReturnProps => {
+const useQuizContract = (): IUseQuizContractReturnProps => {
   const { web3, isInitialized, walletAddress } = useWeb3();
   const [accountBalance, setAccountBalance] = useState<number | null>(null);
 
@@ -35,4 +35,4 @@ const useQuiz = (): IUseQuizReturnProps => {
   return { accountBalance };
 };
 
-export default useQuiz;
+export default useQuizContract;

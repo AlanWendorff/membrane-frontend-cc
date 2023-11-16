@@ -1,17 +1,25 @@
-interface IQuizPresentationProps {
-  surveyTitle: string;
-  surveyImage: string;
-}
+import { CircularProgress } from "@mui/material";
+import useQuiz from "../../../../hooks/app/useQuiz";
 
-const QuizPresentation = ({
-  surveyTitle,
-  surveyImage,
-}: IQuizPresentationProps) => (
-  <>
-    <h1>{surveyTitle}</h1>
+const QuizPresentation = () => {
+  const { isLoading, quizData } = useQuiz();
 
-    <img src={surveyImage} width={220} height={220} alt="trivia picture" />
-  </>
-);
+  if (isLoading) {
+    return <CircularProgress sx={{ mt: 15 }} />;
+  }
+
+  return (
+    <>
+      <h1>{quizData?.title}</h1>
+
+      <img
+        src={quizData?.image}
+        width={220}
+        height={220}
+        alt="trivia picture"
+      />
+    </>
+  );
+};
 
 export default QuizPresentation;
