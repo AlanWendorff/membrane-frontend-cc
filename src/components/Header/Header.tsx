@@ -1,13 +1,13 @@
 import { AppBar, Button, Container, Grid, Toolbar } from "@mui/material";
 import { useWeb3 } from "react-dapp-web3";
-import useQuiz from "../../hooks/contract/useQuiz";
+import useQuizContract from "../../hooks/contract/useQuizContract";
 import shortenWalletAddress from "../../utils/scripts/ShortenWalletAddress";
 import "./Header.css";
 
 const Header = () => {
   const { isWalletConnected, walletAddress, connect } = useWeb3();
 
-  const { accountBalance } = useQuiz();
+  const { accountBalance } = useQuizContract();
 
   return (
     <AppBar position="fixed" className="header">

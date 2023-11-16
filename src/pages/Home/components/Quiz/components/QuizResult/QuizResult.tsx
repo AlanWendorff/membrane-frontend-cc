@@ -1,12 +1,7 @@
-import { Grid, List, ListItem, ListItemText } from "@mui/material";
+import { Button, Grid, List, ListItem, ListItemText } from "@mui/material";
 
 const QuizResult = () => (
-  <Grid
-    sx={{ pt: 5, gap: 2 }}
-    container
-    flexDirection="column"
-    alignItems="center"
-  >
+  <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
     <h2>Your answers:</h2>
 
     <List sx={{ width: "184px" }}>
@@ -20,6 +15,10 @@ const QuizResult = () => (
         <ListItemText primary="Question3" secondary="Answer3" />
       </ListItem>
     </List>
+
+    <Button variant="contained" color="secondary" aria-label="Submit quiz">
+      Submit Quiz
+    </Button>
   </Grid>
 );
 
