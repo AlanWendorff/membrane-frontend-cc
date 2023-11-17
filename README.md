@@ -46,6 +46,8 @@ Once the transaction is done, you should receive a reward which can be seen in t
 
 ![submit](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/97e7c3ed-3ad4-4627-9811-8ceb2707e908)
 
+## Demo
+
 ## Technical reference
 <b>ENV variables:</b>
 
