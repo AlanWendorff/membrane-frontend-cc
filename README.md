@@ -21,7 +21,6 @@ If you are not connected yet you would write your password and then switch the n
 ### Main menu
 
 Once the previous steps were completed, the user account balance and his wallet address appear the on the top of the website.
-
 In the main frame the title of the daily trivia is displayed with its picture and a button
 that allows you to begin answering.
 
