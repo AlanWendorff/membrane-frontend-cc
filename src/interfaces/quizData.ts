@@ -10,6 +10,7 @@ export interface IOptions {
 }
 
 interface IQuizData {
+  id: number;
   title: string;
   image: string;
   questions: IQuestions[];
