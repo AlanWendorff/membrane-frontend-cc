@@ -1,53 +1,53 @@
 {
   "id": 314,
-  "title": "Sample Survey",
-  "image": "https://48tools.com/wp-content/uploads/2015/09/shortlink.png",
+  "title": "Lorem ipsum Survey",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg",
   "questions": [
     {
-      "text": "Question1",
+      "text": "Lorem ipsum dolor sit",
       "image": "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
-      "lifetimeSeconds": 10,
+      "lifetimeSeconds": 2,
       "options": [
         {
-          "text": "Opt1"
+          "text": "Rerum laborum"
         },
         {
-          "text": "Opt2"
+          "text": "pariatur labore"
         },
         {
-          "text": "Opt"
+          "text": "excepturi alias"
         }
       ]
     },
     {
-      "text": "Question2",
+      "text": "Amet consectetur adipisicing elit",
       "image": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
-      "lifetimeSeconds": 5,
+      "lifetimeSeconds": 4,
       "options": [
         {
-          "text": "Opt1"
+          "text": "doloremque inventore"
         },
         {
-          "text": "Opt2"
+          "text": "sint corrupti"
         },
         {
-          "text": "Opt"
+          "text": "atque facere"
         }
       ]
     },
     {
-      "text": "Pregunta 2",
+      "text": "Voluptatem nihil excepturi natus qui dolorum dolorem ad odio mollitia?",
       "image": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
-      "lifetimeSeconds": 5,
+      "lifetimeSeconds": 6,
       "options": [
         {
-          "text": "Opt1"
+          "text": "Rerum laborum"
         },
         {
-          "text": "Opt2"
+          "text": "sint corrupti"
         },
         {
-          "text": "Opt"
+          "text": "doloremque inventore"
         }
       ]
     }

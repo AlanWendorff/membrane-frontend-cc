@@ -12,12 +12,7 @@ const QuizPresentation = () => {
     <>
       <h1>{quizData?.title}</h1>
 
-      <img
-        src={quizData?.image}
-        width={220}
-        height={220}
-        alt="trivia picture"
-      />
+      <img src={quizData?.image} width={200} alt="trivia picture" />
     </>
   );
 };
