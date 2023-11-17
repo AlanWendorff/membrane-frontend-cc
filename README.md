@@ -38,13 +38,13 @@ Once the survey ends an overview will be apper with all the answers and below th
 This button allow the user to submit the responses to the blockchain so that they can be validated and receive a reward in return.
 After you press the button metamask shows up requesting transaction confirmation, wich may take a while.
 
-![end](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/f447e0ea-4a3c-401e-95ef-51914f8f2058)
+![submit](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/27a01d1d-1da6-4879-b87f-3f37a9631243)
 
 ### Quiz submitted
 
 Once the transaction is done, you should receive a reward which can be seen in the header as "Account balance" after the website is updated.
 
-![submit](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/27a01d1d-1da6-4879-b87f-3f37a9631243)
+![refresh](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/bf42cc7c-0b65-4d84-877a-1ac6940c72d4)
 
 ## Demo
 
