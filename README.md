@@ -68,6 +68,9 @@ Once the transaction is done, you should receive a reward which can be seen in t
 
 ## Demo
 
+<b><a href="https://goerli.etherscan.io/tx/0x3905d537c6769d59fe97763940bd91217f8cc9218263e9cd45fe86775fe9a943">Transaction detail</a></b>
+![demo](https://github.com/AlanWendorff/membrane-frontend-cc/assets/62715512/e353aa90-b7aa-49d2-b23c-ca37bb12f6b6)
+
 ## Technical reference
 
 <b>ENV variables:</b>
