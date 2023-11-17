@@ -1,5 +1,5 @@
 .header {
-  background-color: #000000cc !important;
+  background-color: #f4f4f4 !important;
   box-shadow: inset 0 -1px 0 0 #333 !important;
   backdrop-filter: saturate(180%) blur(5px);
 }

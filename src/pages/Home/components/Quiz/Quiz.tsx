@@ -1,17 +1,26 @@
-import { Grid, ButtonGroup, Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import IQuizData from "../../../../interfaces/quizData";
 import secondsToMs from "../../../../utils/scripts/SecondsToMs";
 import QuizResult from "./components/QuizResult";
 import EQuizStatus from "../../../../constants/enums";
+import QuizOptions from "./components/QuizOptions";
 
 interface IQuizProps {
-  quizData: IQuizData | null;
+  quizData: IQuizData;
+  quizAnswers: string[];
   quizStatus: EQuizStatus;
   handleQuizStatus: (status: EQuizStatus) => void;
+  handleSelectAnswer: (index: number, val: any) => void;
 }
 
-const Quiz = ({ quizData, quizStatus, handleQuizStatus }: IQuizProps) => {
+const Quiz = ({
+  quizData,
+  quizAnswers,
+  quizStatus,
+  handleQuizStatus,
+  handleSelectAnswer,
+}: IQuizProps) => {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   useEffect(() => {
@@ -22,12 +31,16 @@ const Quiz = ({ quizData, quizStatus, handleQuizStatus }: IQuizProps) => {
     const QUESTIONS_LENGTH = quizData.questions.length - 1;
 
     const intervalID = setInterval(() => {
+      if (!quizAnswers[questionIndex]) {
+        handleSelectAnswer(questionIndex, "");
+      }
+
       if (questionIndex !== QUESTIONS_LENGTH)
         setQuestionIndex(questionIndex + 1);
 
       if (questionIndex === QUESTIONS_LENGTH)
         handleQuizStatus(EQuizStatus.FINISHED);
-    }, secondsToMs(quizData!.questions[questionIndex].lifetimeSeconds));
+    }, secondsToMs(quizData.questions[questionIndex].lifetimeSeconds));
 
     return () => clearInterval(intervalID);
   }, [quizStatus, questionIndex]);
@@ -37,30 +50,22 @@ const Quiz = ({ quizData, quizStatus, handleQuizStatus }: IQuizProps) => {
       {quizStatus === EQuizStatus.RUNNING && (
         <>
           <p>
-            <b>{quizData?.questions[questionIndex].text}</b>
+            <b>
+              <i>{quizData.questions[questionIndex].text}</i>
+            </b>
           </p>
 
-          <ButtonGroup
-            orientation="vertical"
-            aria-label="vertical outlined button group"
-            color="secondary"
-          >
-            {quizData?.questions[questionIndex].options.map(
-              ({ text }, index) => (
-                <Button
-                  aria-aria-label={`select ${text}`}
-                  key={index}
-                  onClick={() => console.log(text)}
-                >
-                  <b>{text}</b>
-                </Button>
-              )
-            )}
-          </ButtonGroup>
+          <QuizOptions
+            questions={quizData.questions}
+            questionIndex={questionIndex}
+            handleSelectAnswer={handleSelectAnswer}
+          />
         </>
       )}
 
-      {quizStatus === EQuizStatus.FINISHED && <QuizResult />}
+      {quizStatus === EQuizStatus.FINISHED && (
+        <QuizResult quizAnswers={quizAnswers} />
+      )}
     </Grid>
   );
 };

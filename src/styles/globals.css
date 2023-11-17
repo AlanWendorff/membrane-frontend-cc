@@ -6,12 +6,16 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background-color: #000;
-  color: #ffffff;
+  background-color: #f4f4f4;
+  color: black;
   margin: 0;
   font-family: "Inter", sans-serif;
 }
 
 #root {
   width: 100%;
+}
+
+p {
+  color: black;
 }
