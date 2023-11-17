@@ -16,6 +16,10 @@ pnpm dev
 
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
+<hr>
+
+# Web Functionality
+
 ## Steps necessary for the operation of the website
 
 ### Waiting to login
