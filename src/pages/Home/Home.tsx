@@ -9,23 +9,15 @@ import useNetwork from "../../hooks/app/useNetwork";
 
 const Home = () => {
   const { isWalletConnected } = useWeb3();
-  const { isLoading, quizData, quizStatus, handleQuizStatus } = useQuiz();
+  const {
+    isLoading,
+    quizAnswers,
+    quizData,
+    quizStatus,
+    handleQuizStatus,
+    handleSelectAnswer,
+  } = useQuiz();
   const { isTargetNetworkSelected } = useNetwork();
-
-  if (!isWalletConnected) {
-    return (
-      <main>
-        <Grid
-          sx={{ pt: 10, gap: 5 }}
-          container
-          flexDirection="column"
-          alignItems="center"
-        >
-          <h1>Login to begin</h1>
-        </Grid>
-      </main>
-    );
-  }
 
   if (!isTargetNetworkSelected) {
     return (
@@ -42,6 +34,21 @@ const Home = () => {
     );
   }
 
+  if (!isWalletConnected) {
+    return (
+      <main>
+        <Grid
+          sx={{ pt: 10, gap: 5 }}
+          container
+          flexDirection="column"
+          alignItems="center"
+        >
+          <h1>Login to begin</h1>
+        </Grid>
+      </main>
+    );
+  }
+
   return (
     <main>
       <Grid
@@ -52,11 +59,15 @@ const Home = () => {
       >
         <QuizPresentation />
 
-        <Quiz
-          quizData={quizData}
-          quizStatus={quizStatus}
-          handleQuizStatus={handleQuizStatus}
-        />
+        {quizData && (
+          <Quiz
+            quizData={quizData}
+            quizAnswers={quizAnswers}
+            quizStatus={quizStatus}
+            handleQuizStatus={handleQuizStatus}
+            handleSelectAnswer={handleSelectAnswer}
+          />
+        )}
 
         {!isLoading && quizStatus === EQuizStatus.STOPPED && (
           <StartQuiz handleQuizStatus={handleQuizStatus} />

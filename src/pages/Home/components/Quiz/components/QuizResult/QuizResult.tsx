@@ -1,25 +1,37 @@
 import { Button, Grid, List, ListItem, ListItemText } from "@mui/material";
+import useQuizContract from "../../../../../../hooks/contract/useQuizContract";
+import { IQuestions } from "../../../../../../interfaces/quizData";
 
-const QuizResult = () => (
-  <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
-    <h2>Your answers:</h2>
+interface IQuizResultProps {
+  quizAnswers: number[];
+  questions: IQuestions[];
+}
 
-    <List sx={{ width: "184px" }}>
-      <ListItem>
-        <ListItemText primary="Question1" secondary="Answer1" />
-      </ListItem>
-      <ListItem>
-        <ListItemText primary="Question2" secondary="Answer2" />
-      </ListItem>
-      <ListItem>
-        <ListItemText primary="Question3" secondary="Answer3" />
-      </ListItem>
-    </List>
+const QuizResult = ({ quizAnswers, questions }: IQuizResultProps) => {
+  const { submitAnswers } = useQuizContract();
 
-    <Button variant="contained" color="secondary" aria-label="Submit quiz">
-      Submit Quiz
-    </Button>
-  </Grid>
-);
+  return (
+    <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
+      <h2>Your answers:</h2>
+
+      <List sx={{ width: "184px" }}>
+        {questions.map(({ options }, index) => (
+          <ListItem key={index}>
+            <ListItemText primary={options[quizAnswers[index]].text} />
+          </ListItem>
+        ))}
+      </List>
+
+      <Button
+        onClick={() => submitAnswers(0, quizAnswers)}
+        variant="contained"
+        color="secondary"
+        aria-label="Submit quiz"
+      >
+        Submit Quiz
+      </Button>
+    </Grid>
+  );
+};
 
 export default QuizResult;
