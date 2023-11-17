@@ -1,5 +1,21 @@
 # Membrane Frontend CC
 
+This is a Vite.ts project bootstrapped with `yarn create vite`.
+
+Getting Started
+First, run the development server:
+
+npm run dev
+
+# or
+
+yarn dev
+
+# or
+
+pnpm dev
+Open http://localhost:5173 with your browser to see the result.
+
 ## Steps necessary for the operation of the website
 
 ### Waiting to login
@@ -60,6 +76,7 @@ This may vary over time if the contract is changed to a new one.
 
 ## Resources used
 
+<a href="https://vitejs.dev/guide/">Vite Documentation</a></br>
 <a href="https://mui.com/material-ui/getting-started/">MaterialUI Documentation</a></br>
 <a href="https://docs.metamask.io/">MetaMask Documentation</a></br>
 <a href="https://soliditytips.com/articles/detect-switch-chain-metamask/">Switching Network</a></br>
