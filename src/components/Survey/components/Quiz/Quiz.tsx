@@ -1,10 +1,9 @@
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
 import QuizResult from "./components/QuizResult";
 import QuizOptions from "./components/QuizOptions";
 import IQuizData from "../../../../interfaces/quizData";
-import secondsToMs from "../../../../utils/scripts/SecondsToMs";
 import EQuizStatus from "../../../../constants/enums";
+import useTimeTrial from "../../../../hooks/app/useTimeTrial";
 
 interface IQuizProps {
   quizData: IQuizData;
@@ -21,29 +20,13 @@ const Quiz = ({
   handleQuizStatus,
   handleSelectAnswer,
 }: IQuizProps) => {
-  const [questionIndex, setQuestionIndex] = useState(0);
-
-  useEffect(() => {
-    if (!(quizData && quizStatus === EQuizStatus.RUNNING)) {
-      return;
-    }
-
-    const QUESTIONS_LENGTH = quizData.questions.length - 1;
-
-    const intervalID = setInterval(() => {
-      if (!quizAnswers[questionIndex]) {
-        handleSelectAnswer(questionIndex, 0);
-      }
-
-      if (questionIndex !== QUESTIONS_LENGTH)
-        setQuestionIndex(questionIndex + 1);
-
-      if (questionIndex === QUESTIONS_LENGTH)
-        handleQuizStatus(EQuizStatus.RESULTS);
-    }, secondsToMs(quizData.questions[questionIndex].lifetimeSeconds));
-
-    return () => clearInterval(intervalID);
-  }, [quizStatus, questionIndex]);
+  const { questionIndex } = useTimeTrial({
+    quizData,
+    quizAnswers,
+    quizStatus,
+    handleQuizStatus,
+    handleSelectAnswer,
+  });
 
   return (
     <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
