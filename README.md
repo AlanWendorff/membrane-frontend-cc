@@ -51,31 +51,18 @@ Once the transaction is done, you should receive a reward which can be seen in t
 "end"
 "trans request"
 
-</br>
-<hr>
-</br>
-
 ## Technical reference
+<b>ENV variables:</b>
 
-### Env variables
-
-</br>
-`VITE_APP_TARGET_NETWORK_HEX`
-</br>
-Necessary for network change.
+`VITE_APP_TARGET_NETWORK_HEX={network-hexadecimal-code}`: Necessary for network change.
 In the code its necessary to know the network on which the contract runs and can vary over time if a contract is released to production.
 
-</br>
-</br>
-
-`VITE_APP_QUIZ_CONTRACT_ADDRESS`
-</br>
-Necessary for frontend/contract interaction.
+`VITE_APP_QUIZ_CONTRACT_ADDRESS={contract-address}`: Necessary for frontend/contract interaction.
 In the code its necessary to know the contract address and can vary over time if the contract is changed to a new one.
 
 ## Resources used
 
 <a href="https://mui.com/material-ui/getting-started/">MaterialUI Documentation</a></br>
 <a href="https://docs.metamask.io/">MetaMask Documentation</a></br>
-<a href="https://soliditytips.com/articles/detect-switch-chain-metamask/">Switch Network</a></br>
+<a href="https://soliditytips.com/articles/detect-switch-chain-metamask/">Switching Network</a></br>
 <a href="https://github.com/R4k4210/react-dapp-web3">react-dapp-web3 library</a></br>
