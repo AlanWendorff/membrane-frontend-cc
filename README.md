@@ -1,20 +1,21 @@
 # Membrane Frontend CC
 
 This is a Vite.ts project bootstrapped with `yarn create vite`.
+This is a [Vite.ts](https://vitejs.dev) project bootstrapped with `yarn create vite`.
 
-Getting Started
+## Getting Started
+
 First, run the development server:
 
+```bash
 npm run dev
-
 # or
-
 yarn dev
-
 # or
-
 pnpm dev
-Open http://localhost:5173 with your browser to see the result.
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
 ## Steps necessary for the operation of the website
 
