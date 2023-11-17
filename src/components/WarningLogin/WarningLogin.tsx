@@ -7,7 +7,7 @@ const WarningLogin = () => (
     flexDirection="column"
     alignItems="center"
   >
-    <h1>Login to begin</h1>
+    <h1>Connect wallet to begin</h1>
   </Grid>
 );
 

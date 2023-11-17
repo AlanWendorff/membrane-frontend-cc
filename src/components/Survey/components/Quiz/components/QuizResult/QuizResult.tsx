@@ -13,7 +13,7 @@ const QuizResult = ({ quizData, quizAnswers }: IQuizResultProps) => {
   const { id, questions } = quizData;
 
   return (
-    <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
+    <Grid sx={{ gap: 1 }} container flexDirection="column" alignItems="center">
       <h2>Your answers:</h2>
 
       <List sx={{ width: "184px" }}>
