@@ -5,7 +5,7 @@ import { IQuestions } from "../../../../../../interfaces/quizData";
 interface IQuizOptionsProps {
   questions: IQuestions[];
   questionIndex: number;
-  handleSelectAnswer: (index: number, val: any) => void;
+  handleSelectAnswer: (questionIndex: number, answerId: number) => void;
 }
 
 const QuizOptions = ({
@@ -30,7 +30,7 @@ const QuizOptions = ({
         <Button
           key={text}
           onClick={() => {
-            handleSelectAnswer(questionIndex, text);
+            handleSelectAnswer(questionIndex, index);
             setStatus(INITIAL_BUTTON_STATUS);
             VARIABLE_BUTTON_STATUS[index] = 1;
             setStatus(VARIABLE_BUTTON_STATUS);

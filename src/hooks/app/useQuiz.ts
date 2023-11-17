@@ -5,27 +5,26 @@ import EQuizStatus from "../../constants/enums";
 
 interface IUseQuizReturnProps {
   isLoading: boolean;
-  quizAnswers: string[];
+  quizAnswers: number[];
   quizData: IQuizData | null;
   quizStatus: EQuizStatus;
   handleQuizStatus: (status: EQuizStatus) => void;
-  handleSelectAnswer: (index: number, val: any) => void;
+  handleSelectAnswer: (questionIndex: number, answerId: number) => void;
 }
 
 const useQuiz = (): IUseQuizReturnProps => {
   const [isLoading, setIsLoading] = useState(true);
   const [quizStatus, setQuizStatus] = useState(EQuizStatus.STOPPED);
   const [quizData, setQuizData] = useState<IQuizData | null>(null);
-  const [quizAnswers, setQuizAnswers] = useState<string[]>([]);
+  const [quizAnswers, setQuizAnswers] = useState<number[]>([]);
 
   const handleQuizStatus = (status: EQuizStatus) => {
     setQuizStatus(status);
   };
 
-  const handleSelectAnswer = (index: number, val: any) => {
-    let answers = quizAnswers;
-    answers[index] = val;
-    setQuizAnswers(answers);
+  const handleSelectAnswer = (questionIndex: number, answerId: number) => {
+    quizAnswers[questionIndex] = answerId;
+    setQuizAnswers(quizAnswers);
   };
 
   useEffect(() => {

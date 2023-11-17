@@ -1,17 +1,17 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import QuizResult from "./components/QuizResult";
+import QuizOptions from "./components/QuizOptions";
 import IQuizData from "../../../../interfaces/quizData";
 import secondsToMs from "../../../../utils/scripts/SecondsToMs";
-import QuizResult from "./components/QuizResult";
 import EQuizStatus from "../../../../constants/enums";
-import QuizOptions from "./components/QuizOptions";
 
 interface IQuizProps {
   quizData: IQuizData;
-  quizAnswers: string[];
+  quizAnswers: number[];
   quizStatus: EQuizStatus;
   handleQuizStatus: (status: EQuizStatus) => void;
-  handleSelectAnswer: (index: number, val: any) => void;
+  handleSelectAnswer: (questionIndex: number, answerId: number) => void;
 }
 
 const Quiz = ({
@@ -32,14 +32,14 @@ const Quiz = ({
 
     const intervalID = setInterval(() => {
       if (!quizAnswers[questionIndex]) {
-        handleSelectAnswer(questionIndex, "");
+        handleSelectAnswer(questionIndex, 0);
       }
 
       if (questionIndex !== QUESTIONS_LENGTH)
         setQuestionIndex(questionIndex + 1);
 
       if (questionIndex === QUESTIONS_LENGTH)
-        handleQuizStatus(EQuizStatus.FINISHED);
+        handleQuizStatus(EQuizStatus.RESULTS);
     }, secondsToMs(quizData.questions[questionIndex].lifetimeSeconds));
 
     return () => clearInterval(intervalID);
@@ -63,8 +63,8 @@ const Quiz = ({
         </>
       )}
 
-      {quizStatus === EQuizStatus.FINISHED && (
-        <QuizResult quizAnswers={quizAnswers} />
+      {quizStatus === EQuizStatus.RESULTS && (
+        <QuizResult quizAnswers={quizAnswers} questions={quizData.questions} />
       )}
     </Grid>
   );

@@ -6,7 +6,7 @@ import { CONFIRMATION } from "../../constants/web3Events";
 
 interface IUseQuizContractReturnProps {
   accountBalance: number | null;
-  submitAnswers: (surveyId: number, answers: string[]) => void;
+  submitAnswers: (surveyId: number, answers: number[]) => void;
 }
 
 const useQuizContract = (): IUseQuizContractReturnProps => {
@@ -33,16 +33,14 @@ const useQuizContract = (): IUseQuizContractReturnProps => {
     setAccountBalance(AMOUNT);
   };
 
-  const submitAnswers = async (surveyId: number, answers: string[]) => {
+  const submitAnswers = async (surveyId: number, answers: number[]) => {
     await contract.methods
       .submit(surveyId, answers)
-      .send()
-      /*       .from({
+      .send({
         from: walletAddress,
-        value: 123,
-      }) */
+      })
       .once(CONFIRMATION, () => {
-        console.log("sucess");
+        window.location.reload();
       });
   };
 

@@ -1,11 +1,13 @@
 import { Button, Grid, List, ListItem, ListItemText } from "@mui/material";
 import useQuizContract from "../../../../../../hooks/contract/useQuizContract";
+import { IQuestions } from "../../../../../../interfaces/quizData";
 
 interface IQuizResultProps {
-  quizAnswers: string[];
+  quizAnswers: number[];
+  questions: IQuestions[];
 }
 
-const QuizResult = ({ quizAnswers }: IQuizResultProps) => {
+const QuizResult = ({ quizAnswers, questions }: IQuizResultProps) => {
   const { submitAnswers } = useQuizContract();
 
   return (
@@ -13,9 +15,9 @@ const QuizResult = ({ quizAnswers }: IQuizResultProps) => {
       <h2>Your answers:</h2>
 
       <List sx={{ width: "184px" }}>
-        {quizAnswers.map((answer, index) => (
+        {questions.map(({ options }, index) => (
           <ListItem key={index}>
-            <ListItemText primary={answer} />
+            <ListItemText primary={options[quizAnswers[index]].text} />
           </ListItem>
         ))}
       </List>
