@@ -1,6 +1,5 @@
 # Membrane Frontend CC
 
-This is a Vite.ts project bootstrapped with `yarn create vite`.
 This is a [Vite.ts](https://vitejs.dev) project bootstrapped with `yarn create vite`.
 
 ## Getting Started
