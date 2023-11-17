@@ -64,7 +64,7 @@ const Quiz = ({
       )}
 
       {quizStatus === EQuizStatus.RESULTS && (
-        <QuizResult quizAnswers={quizAnswers} questions={quizData.questions} />
+        <QuizResult quizData={quizData} quizAnswers={quizAnswers} />
       )}
     </Grid>
   );

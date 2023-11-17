@@ -1,14 +1,16 @@
 import { Button, Grid, List, ListItem, ListItemText } from "@mui/material";
 import useQuizContract from "../../../../../../hooks/contract/useQuizContract";
-import { IQuestions } from "../../../../../../interfaces/quizData";
+import IQuizData from "../../../../../../interfaces/quizData";
 
 interface IQuizResultProps {
+  quizData: IQuizData;
   quizAnswers: number[];
-  questions: IQuestions[];
 }
 
-const QuizResult = ({ quizAnswers, questions }: IQuizResultProps) => {
+const QuizResult = ({ quizData, quizAnswers }: IQuizResultProps) => {
   const { submitAnswers } = useQuizContract();
+
+  const { id, questions } = quizData;
 
   return (
     <Grid sx={{ gap: 2 }} container flexDirection="column" alignItems="center">
@@ -23,7 +25,7 @@ const QuizResult = ({ quizAnswers, questions }: IQuizResultProps) => {
       </List>
 
       <Button
-        onClick={() => submitAnswers(0, quizAnswers)}
+        onClick={() => submitAnswers(id, quizAnswers)}
         variant="contained"
         color="secondary"
         aria-label="Submit quiz"
