@@ -52,11 +52,11 @@ Once the transaction is done, you should receive a reward which can be seen in t
 
 <b>ENV variables:</b>
 
-`VITE_APP_TARGET_NETWORK_HEX={network-hexadecimal-code}`: Necessary for network change.
-In the code its necessary to know the network on which the contract runs and can vary over time if a contract is released to production.
+`VITE_APP_TARGET_NETWORK_HEX={network-hexadecimal-code}`: Necessary for network change functionality.
+This may vary over time if a contract is released on the mainnet.
 
 `VITE_APP_QUIZ_CONTRACT_ADDRESS={contract-address}`: Necessary for frontend/contract interaction.
-In the code its necessary to know the contract address and can vary over time if the contract is changed to a new one.
+This may vary over time if the contract is changed to a new one.
 
 ## Resources used
 
